@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private float movementX;
     private float movementY;
+    private Vector3 startposition;
 
     public float speed = 0;
 
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
         SetCountText();
 
         winTextObject.SetActive(false);
+
+        startposition = transform.position;
     }
 
     void OnMove(InputValue movementValue)
@@ -82,7 +85,10 @@ public class PlayerController : MonoBehaviour
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
 
         }
-
+        else if (collision.gameObject.CompareTag("reset"))
+        {
+            transform.position = startposition;
+        }
     }
 
 
