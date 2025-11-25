@@ -74,21 +74,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
 
+
+    private void OnCollisionEnter(Collision collision)
+
+    {
+
+        if (collision.gameObject.CompareTag("Enemy"))
+
+        {
+         
             Destroy(gameObject);
 
+
             winTextObject.gameObject.SetActive(true);
-            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose! Press 'R' to Restart!";
 
         }
-        else if (collision.gameObject.CompareTag("reset"))
-        {
-            transform.position = startposition;
-        }
+
     }
 
 

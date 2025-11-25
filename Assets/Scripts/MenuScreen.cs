@@ -8,4 +8,8 @@ public void PlayGame()
         SceneManager.LoadSceneAsync("MiniGame");
     }
 
+public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
